@@ -1,19 +1,8 @@
+import os
+import re
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
-def plot_price(df, price_column='Price', date_column='Date', title='Bitcoin Closing Price Over Time'):
-    """
-    Plots the price over time.
-    """
-    plt.figure(figsize=(14, 7))
-    plt.plot(df[date_column], df[price_column], label=price_column, color='blue')
-    plt.title(title)
-    plt.xlabel('Date')
-    plt.ylabel('Price (USD)')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
 
 def train_test_split_time_series(df, test_size=0.2):
     """
@@ -48,3 +37,27 @@ def format_large_numbers(num):
         return f'{num/1e3:.2f}K'
     else:
         return str(num)
+
+def save_fig(title, tight=True, dpi=300, folder="../outputs/figures"):
+    """
+    Saves the current Matplotlib figure with a cleaned-up filename.
+    
+    Args:
+        title (str): Title to use for the filename.
+        tight (bool): Whether to use tight layout.
+        dpi (int): Resolution of the image.
+        folder (str): Folder where to save the figure.
+    """
+    if not os.path.exists(folder):
+        os.makedirs(folder)  # Create folder if it doesn't exist
+    
+    # Clean filename: remove special characters, spaces to underscores
+    filename = re.sub(r'[^a-zA-Z0-9]', '_', title) + ".png"
+    filepath = os.path.join(folder, filename)
+    
+    if tight:
+        plt.savefig(filepath, bbox_inches='tight', dpi=dpi)
+    else:
+        plt.savefig(filepath, dpi=dpi)
+    
+    print(f"✅ Figure saved: {filepath}")
