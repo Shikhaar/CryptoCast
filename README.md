@@ -7,17 +7,17 @@ Notably, the LSTM model achieved the best performance among all models explored,
 ---
 
 ## 📚 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [How to Run](#how-to-run)
-- [Modeling Techniques](#modeling-techniques)
-- [Results](#results)
-- [Conclusion](#conclusion)
-- [Scrrenshots](#screenshots)
-- [License](#license)
-- [Contact](#contact)
+- [Overview](#Overview)
+- [Features](#Features)
+- [Tech Stack](#Tech-Stack)
+- [Project Structure](#Project-Structure)
+- [How to Run](#How-To-Run)
+- [Modeling Techniques](#Modeling-Techniques)
+- [Results](#Results)
+- [Conclusion](#Conclusion)
+- [Scrrenshots](#Screenshots)
+- [License](#License)
+- [Contact](#Contact)
 
 ---
 
