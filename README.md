@@ -85,12 +85,12 @@ CryptoCast/
 **Step 1: Clone the repository**
 ```bash
 # Windows
-git clone https://github.com/ranjansatvik/CryptoPricePrediction.git
+git clone https://github.com/ranjansatvik/CryptoCast.git
 cd CryptoPricePrediction
 ```
 ```bash
 # MacOS/Linux
-git clone https://github.com/ranjansatvik/CryptoPricePrediction.git
+git clone https://github.com/ranjansatvik/CryptoCast.git
 cd CryptoPricePrediction
 ```
 
@@ -140,7 +140,7 @@ Sorted by **Top R² Score**:
 | ARIMA              | 26156.80    | 1.10e+09    | 33122.17    | -0.6140   |
 | SARIMA             | 26156.80    | 1.10e+09    | 33122.17    | -0.6140   |
 
-📌 [Full comparison available in /outputs/metrics/Model_Comparison_Metrics.csv](https://github.com/ranjansatvik/CryptoPricePrediction/blob/main/outputs/metrics/Model_Comparison_Metrics.csv)
+📌 Full comparison available in [Model_Comparison_Metrics.csv](https://github.com/ranjansatvik/CryptoCast/blob/main/outputs/metrics/Model_Comparison_Metrics.csv)
 
 ---
 
@@ -156,7 +156,7 @@ While results are promising, further work could include integrating external fac
 
 ## 📷 Screenshots
 
-| Model Comparison | Normalized Metrics |
+| Model Comparison | Metrics |
 |------------------|--------------------|
 | ![All Models](./outputs/figures/All_Model_Comparison.png) | ![Bar Chart](./outputs/figures/Model_Comparison_Metrics.png) |
 
@@ -170,8 +170,10 @@ This project is licensed under the MIT License.
 
 ## 📬 Contact
 
-Satvik Ranjan — [LinkedIn](https://www.linkedin.com/in/satvikranjan)
+Satvik Ranjan — [LinkedIn](https://www.linkedin.com/in/satvik-ranjan/)
+Veni Madhav — [LinkedIn](https://www.linkedin.com/in/venimadhav/)
+Shikhar Srivastava — [LinkedIn](https://www.linkedin.com/in/shikhar004/)
 
-Project Link: [https://github.com/ranjansatvik/CryptoPricePrediction](https://github.com/ranjansatvik/CryptoPricePrediction)
+Project Link: [CryptoCast](https://github.com/ranjansatvik/CryptoCast)
 
 ---
