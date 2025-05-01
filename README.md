@@ -1,81 +1,114 @@
-# 📈 CryptoCast: Forecasting Bitcoin with AI
+# 🪙 CryptoCast: Forecasting Bitcoin with AI
 
-**CryptoCast** is a machine learning-powered project that forecasts future Bitcoin prices using traditional statistical models (ARIMA, SARIMA), deep learning (LSTM, BiLSTM), and ensemble strategies like stacking and averaging. Through comprehensive experimentation, we discovered that the LSTM model delivers the most accurate predictions, outperforming classical approaches by a significant margin.
+CryptoCast is a machine learning-powered project that forecasts future Bitcoin prices using a range of predictive models. From traditional statistical techniques like ARIMA and SARIMA to advanced deep learning models such as LSTM and BiLSTM, and sophisticated ensemble strategies, CryptoCast aims to provide accurate, explainable, and comparative insights into cryptocurrency forecasting.
 
----
-
-## 📌 Table of Contents
-- [Overview](#-overview)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [How to Run](#-how-to-run)
-- [Modeling Techniques](#-modeling-techniques)
-- [Results](#-results)
-- [Conclusion](#-conclusion)
-- [Screenshots](#-screenshots)
-- [Contact](#-contact)
+Notably, the LSTM model achieved the best performance among all models explored, showcasing the strength of deep learning for time series predictions in volatile domains like cryptocurrency.
 
 ---
 
-## 🧠 Overview
+## 📚 Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [How to Run](#how-to-run)
+- [Modeling Techniques](#modeling-techniques)
+- [Results](#results)
+- [Conclusion](#conclusion)
+- [Scrrenshots](#screenshots)
+- [License](#license)
+- [Contact](#contact)
 
-Bitcoin is one of the most volatile and highly traded digital assets in the financial market. Accurately forecasting its price is crucial for traders, investors, and researchers. This project investigates various models ranging from simple statistical methods to advanced neural networks, using historical price data to predict future movements.
+---
 
-We implemented and compared ARIMA, SARIMA, LSTM, BiLSTM, hybrid average models, and a stacked ensemble to find the most accurate forecasting approach. The LSTM model emerged as the best performer.
+## 📖 Overview
+
+With the growing volatility and interest in cryptocurrencies, accurate forecasting of crypto prices is both a technical and economic challenge. This project explores Bitcoin price prediction using statistical models (ARIMA, SARIMA), deep learning models (LSTM, BiLSTM), and hybrid/ensemble approaches that combine their strengths.
+
+Each model is evaluated using metrics such as MAE, RMSE, and R² Score, with detailed comparisons and plots provided. The ultimate goal is to assess the forecasting capabilities of each technique and determine which method best captures Bitcoin's price behavior.
+
+---
+
+## ✨ Features
+- ✅ Log transform & normalization of time series data
+- 📊 Comparative modeling using ARIMA, SARIMA, LSTM, BiLSTM
+- 🔁 Hybrid and ensemble models: stacking & averaging
+- 📈 Evaluation using MAE, RMSE, MSE, and R² Score
+- 📎 Visualizations for predictions vs actual trends
+- 📦 Modular structure for easy experimentation
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Programming Language**: Python 3.9.13
-- **Environment**: VS Code, Jupyter Notebooks
+- **Environment**:
+  - VS Code
+  - Jupyter Notebook (MacOS/Linux users can use `jupyter notebook` in terminal)
 - **Libraries**: `pmdarima`, `scikit-learn`, `matplotlib`, `seaborn`, `tensorflow`, `xgboost`, `pandas`, `numpy`
 - **Models Used**:
   - ARIMA
   - SARIMA
   - LSTM
   - BiLSTM
+  - XGBoost
   - Ensemble (Averaging & Stacking)
 
 ---
 
-## 📁 Project Structure
+## 📂 Project Structure
 
-```
+```bash
 CryptoCast/
-├── data/                      # Raw data files
-├── models/                    # Saved model files (.pkl, .keras)
+│
+├── data/
+│   ├── raw/                # Original raw data
+│   └── processed/          # Preprocessed, clean data
+│
+├── models/                 # Saved model files (.pkl, .keras)
+│
+├── notebooks/
+│
 ├── outputs/
-│   ├── figures/               # All visualizations
-│   └── metrics/               # Model predictions and metrics
-├── src/                       # Preprocessing and utility scripts
-├── notebooks/                 # Jupyter modeling notebooks
-├── README.md                  # Project overview
+│   ├── figures/            # Visualizations
+│   └── metrics/            # CSVs of predictions, evaluations
+│
+├── requirements.txt        # Python dependencies
+├── README.md               # Project description and documentation
+└── ...                     # Other files
 ```
 
 ---
 
-## 🚀 How to Run
+## ▶️ How to Run
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/CryptoCast.git
-   cd CryptoCast
-   ```
+**Step 1: Clone the repository**
+```bash
+# Windows
+git clone https://github.com/ranjansatvik/CryptoPricePrediction.git
+cd CryptoPricePrediction
+```
+```bash
+# MacOS/Linux
+git clone https://github.com/ranjansatvik/CryptoPricePrediction.git
+cd CryptoPricePrediction
+```
 
-2. **Create a virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # or venv\Scripts\activate on Windows
-   ```
+**Step 2: Install required libraries**
+```bash
+# Windows
+pip install -r requirements.txt
+```
+```bash
+# MacOS/Linux
+pip3 install -r requirements.txt
+```
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run the notebooks**
-   Launch Jupyter Notebook or JupyterLab and execute the notebooks inside the `notebooks/` folder.
+**Step 3: Run the notebooks**
+- Open VS Code.
+- Navigate to the `notebooks/` folder.
+- Open `.ipynb` files with Jupyter Notebook extension and run cell-by-cell.
+- (MacOS/Linux users can run `jupyter notebook` in terminal and open in browser.)
 
 ---
 
@@ -93,23 +126,31 @@ CryptoCast/
 
 ---
 
-## 📊 Results (Top 3 Models by RMSE)
+## 📊 Results
 
-| Model               | MAE       | RMSE      | R² Score |
-|--------------------|-----------|-----------|----------|
-| **LSTM**           | 1,440.88  | 1,960.98  | 0.9943   |
-| **Stacked**        | 1,891.38  | 2,603.45  | 0.9899   |
-| **Avg_LSTM_BiLSTM**| 1,910.78  | 2,909.12  | 0.9875   |
+Sorted by **Top R² Score**:
 
-📌 Full comparison available in `/outputs/metrics/Model_Comparison_Metrics.csv`
+| Model               | MAE         | MSE         | RMSE        | R² Score  |
+|--------------------|-------------|-------------|-------------|-----------|
+| LSTM               | 1440.88     | 3.85e+06    | 1960.98     | 0.9943    |
+| Stacked            | 1891.38     | 6.78e+06    | 2603.46     | 0.9899    |
+| Avg_LSTM_BiLSTM    | 1910.78     | 8.46e+06    | 2909.12     | 0.9875    |
+| BiLSTM             | 2827.65     | 1.96e+07    | 4428.93     | 0.9711    |
+| Avg_ARIMA_BiLSTM   | 12169.24    | 2.33e+08    | 15265.54    | 0.6568    |
+| ARIMA              | 26156.80    | 1.10e+09    | 33122.17    | -0.6140   |
+| SARIMA             | 26156.80    | 1.10e+09    | 33122.17    | -0.6140   |
+
+📌 [Full comparison available in /outputs/metrics/Model_Comparison_Metrics.csv](https://github.com/ranjansatvik/CryptoPricePrediction/blob/main/outputs/metrics/Model_Comparison_Metrics.csv)
 
 ---
 
 ## ✅ Conclusion
 
-Deep learning models, particularly **LSTM**, significantly outperformed traditional methods like ARIMA and SARIMA. Among all tested models, LSTM achieved the **lowest RMSE** and **highest R²**, making it the most suitable for crypto price prediction.
+This project demonstrates that while traditional time series models like ARIMA and SARIMA provide a foundational understanding of Bitcoin price trends, they fall short in capturing the complex, nonlinear patterns inherent in cryptocurrency data. Deep learning models, particularly LSTM, significantly outperform traditional methods, achieving an R² score above 0.99. The LSTM model also excels in terms of MAE and RMSE, proving to be the most effective standalone model.
 
-Traditional models are valuable for their interpretability, but ensembles and deep learning strategies demonstrate far superior forecasting capabilities for highly volatile assets like Bitcoin.
+Moreover, stacking multiple models using ensemble techniques further improved prediction accuracy, striking a balance between overfitting and generalization. Hybrid models combining ARIMA and BiLSTM or LSTM and BiLSTM show promise but are slightly less effective than pure LSTM or stacked ensembles in this context.
+
+While results are promising, further work could include integrating external factors (e.g., news sentiment, trading volume) or testing on other cryptocurrencies. The insights here provide a solid foundation for more robust crypto price forecasting systems.
 
 ---
 
@@ -121,8 +162,16 @@ Traditional models are valuable for their interpretability, but ensembles and de
 
 ---
 
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
 ## 📬 Contact
 
-For suggestions or collaborations, connect on [LinkedIn](https://https://www.linkedin.com/in/satvik-ranjan/)
+Satvik Ranjan — [LinkedIn](https://www.linkedin.com/in/satvikranjan)
+
+Project Link: [https://github.com/ranjansatvik/CryptoPricePrediction](https://github.com/ranjansatvik/CryptoPricePrediction)
 
 ---
