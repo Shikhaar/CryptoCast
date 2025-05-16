@@ -6,6 +6,8 @@ Notably, the LSTM model achieved the best performance among all models explored,
 
 ---
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/ranjansatvik/CryptoCast)
+
 ## 📚 Table of Contents
 - [Overview](#overview)
 - [Features](#features)
